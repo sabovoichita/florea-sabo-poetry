@@ -44,10 +44,11 @@ function showpoezia5() {
   document.getElementById("poezia1").style.display = "none";
   document.getElementById("poezia2").style.display = "none";
   document.getElementById("poezia3").style.display = "none";
-  document.getElementById("poezia5").style.display = "none";
+  document.getElementById("poezia4").style.display = "none";
   document.getElementById("poezia6").style.display = "none";
   document.getElementById("poezia7").style.display = "none";
-  document.getElementById("poezia8").style.display = "block";
+  document.getElementById("poezia8").style.display = "none";
+  document.getElementById("poezia5").style.display = "block";
 }
 
 function showpoezia6() {
@@ -55,6 +56,7 @@ function showpoezia6() {
   document.getElementById("poezia2").style.display = "none";
   document.getElementById("poezia3").style.display = "none";
   document.getElementById("poezia5").style.display = "none";
+  document.getElementById("poezia4").style.display = "none";
   document.getElementById("poezia5").style.display = "none";
   document.getElementById("poezia7").style.display = "none";
   document.getElementById("poezia8").style.display = "none";
