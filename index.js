@@ -47,7 +47,7 @@ function showpoezia5() {
   document.getElementById("poezia5").style.display = "none";
   document.getElementById("poezia6").style.display = "none";
   document.getElementById("poezia7").style.display = "none";
-  document.getElementById("poezia8").style.display = "none";
+  document.getElementById("poezia8").style.display = "block";
 }
 
 function showpoezia6() {
