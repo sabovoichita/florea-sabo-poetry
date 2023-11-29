@@ -1,39 +1,95 @@
-function showHomePage() {
-  document.getElementById("skills").style.display = "none";
-  document.getElementById("projects").style.display = "none";
-  document.getElementById("languages").style.display = "none";
-  document.getElementById("home").style.display = "block";
+function showpoezia1() {
+  document.getElementById("poezia2").style.display = "none";
+  document.getElementById("poezia3").style.display = "none";
+  document.getElementById("poezia4").style.display = "none";
+  document.getElementById("poezia5").style.display = "none";
+  document.getElementById("poezia6").style.display = "none";
+  document.getElementById("poezia7").style.display = "none";
+  document.getElementById("poezia8").style.display = "none";
+
+  document.getElementById("poezia1").style.display = "block";
 }
 
-function showSkillsPage() {
-  document.getElementById("home").style.display = "none";
-  document.getElementById("projects").style.display = "none";
-  document.getElementById("languages").style.display = "none";
-  document.getElementById("skills").style.display = "block";
+function showpoezia2() {
+  document.getElementById("poezia1").style.display = "none";
+  document.getElementById("poezia3").style.display = "none";
+  document.getElementById("poezia4").style.display = "none";
+  document.getElementById("poezia5").style.display = "none";
+  document.getElementById("poezia6").style.display = "none";
+  document.getElementById("poezia7").style.display = "none";
+  document.getElementById("poezia8").style.display = "none";
+
+  document.getElementById("poezia2").style.display = "block";
 }
-function showProjectsPage() {
-  document.getElementById("projects").style.display = "block";
-  document.getElementById("home").style.display = "none";
-  document.getElementById("skills").style.display = "none";
-  document.getElementById("languages").style.display = "none";
+function showpoezia3() {
+  document.getElementById("poezia1").style.display = "none";
+  document.getElementById("poezia2").style.display = "none";
+  document.getElementById("poezia4").style.display = "none";
+  document.getElementById("poezia5").style.display = "none";
+  document.getElementById("poezia6").style.display = "none";
+  document.getElementById("poezia7").style.display = "none";
+  document.getElementById("poezia8").style.display = "none";
+
+  document.getElementById("poezia3").style.display = "block";
 }
-function showLanguagesPage() {
-  document.getElementById("languages").style.display = "block";
-  document.getElementById("home").style.display = "none";
-  document.getElementById("skills").style.display = "none";
-  document.getElementById("projects").style.display = "none";
+function showpoezia4() {
+  document.getElementById("poezia1").style.display = "none";
+  document.getElementById("poezia2").style.display = "none";
+  document.getElementById("poezia3").style.display = "none";
+  document.getElementById("poezia5").style.display = "none";
+  document.getElementById("poezia6").style.display = "none";
+  document.getElementById("poezia7").style.display = "none";
+  document.getElementById("poezia8").style.display = "none";
+
+  document.getElementById("poezia4").style.display = "block";
 }
-// showSkillsPage();
-showHomePage();
 
-var homeLink = document.querySelectorAll("#top-menu-bar a")[0];
-homeLink.addEventListener("click", showHomePage);
+function showpoezia5() {
+  document.getElementById("poezia1").style.display = "none";
+  document.getElementById("poezia2").style.display = "none";
+  document.getElementById("poezia3").style.display = "none";
+  document.getElementById("poezia5").style.display = "none";
+  document.getElementById("poezia6").style.display = "none";
+  document.getElementById("poezia7").style.display = "none";
+  document.getElementById("poezia8").style.display = "none";
 
-var skillsLink = document.querySelectorAll("#top-menu-bar a")[1];
-skillsLink.addEventListener("click", showSkillsPage);
+  document.getElementById("poezia5").style.display = "block";
+}
 
-var projectsLink = document.querySelectorAll("#top-menu-bar a")[2];
-projectsLink.addEventListener("click", showProjectsPage);
+function showpoezia6() {
+  document.getElementById("poezia1").style.display = "none";
+  document.getElementById("poezia2").style.display = "none";
+  document.getElementById("poezia3").style.display = "none";
+  document.getElementById("poezia5").style.display = "none";
+  document.getElementById("poezia5").style.display = "none";
+  document.getElementById("poezia7").style.display = "none";
+  document.getElementById("poezia8").style.display = "none";
 
-var languagesLink = document.querySelectorAll("#top-menu-bar a")[3];
-languagesLink.addEventListener("click", showLanguagesPage);
+  document.getElementById("poezia6").style.display = "block";
+}
+
+function showpoezia7() {
+  document.getElementById("poezia1").style.display = "none";
+  document.getElementById("poezia2").style.display = "none";
+  document.getElementById("poezia3").style.display = "none";
+  document.getElementById("poezia4").style.display = "none";
+  document.getElementById("poezia5").style.display = "none";
+  document.getElementById("poezia6").style.display = "none";
+  document.getElementById("poezia8").style.display = "none";
+
+  document.getElementById("poezia7").style.display = "block";
+}
+
+function showpoezia8() {
+  document.getElementById("poezia1").style.display = "none";
+  document.getElementById("poezia2").style.display = "none";
+  document.getElementById("poezia3").style.display = "none";
+  document.getElementById("poezia4").style.display = "none";
+  document.getElementById("poezia5").style.display = "none";
+  document.getElementById("poezia6").style.display = "none";
+  document.getElementById("poezia7").style.display = "none";
+
+  document.getElementById("poezia8").style.display = "block";
+}
+
+showpoezia1();
