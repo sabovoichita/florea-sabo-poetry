@@ -1,87 +1,97 @@
+function hide(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+function show(id) {
+  console.info("show", id);
+  var page = document.getElementById(id);
+  console.info("show page", page);
+  page.style.display = "block";
+}
 function showpoezia1() {
-  document.getElementById("poezia2").style.display = "none";
-  document.getElementById("poezia3").style.display = "none";
-  document.getElementById("poezia4").style.display = "none";
-  document.getElementById("poezia5").style.display = "none";
-  document.getElementById("poezia6").style.display = "none";
-  document.getElementById("poezia7").style.display = "none";
-  document.getElementById("poezia8").style.display = "none";
-  document.getElementById("poezia1").style.display = "block";
+  hide("poezia2");
+  hide("poezia3");
+  hide("poezia4");
+  hide("poezia5");
+  hide("poezia6");
+  hide("poezia7");
+  hide("poezia8");
+  show("poezia1");
 }
 
 function showpoezia2() {
-  document.getElementById("poezia1").style.display = "none";
-  document.getElementById("poezia3").style.display = "none";
-  document.getElementById("poezia4").style.display = "none";
-  document.getElementById("poezia5").style.display = "none";
-  document.getElementById("poezia6").style.display = "none";
-  document.getElementById("poezia7").style.display = "none";
-  document.getElementById("poezia8").style.display = "none";
-  document.getElementById("poezia2").style.display = "block";
+  hide("poezia1");
+  hide("poezia3");
+  hide("poezia4");
+  hide("poezia5");
+  hide("poezia6");
+  hide("poezia7");
+  hide("poezia8");
+  show("poezia2");
 }
 function showpoezia3() {
-  document.getElementById("poezia1").style.display = "none";
-  document.getElementById("poezia2").style.display = "none";
-  document.getElementById("poezia4").style.display = "none";
-  document.getElementById("poezia5").style.display = "none";
-  document.getElementById("poezia6").style.display = "none";
-  document.getElementById("poezia7").style.display = "none";
-  document.getElementById("poezia8").style.display = "none";
-  document.getElementById("poezia3").style.display = "block";
+  hide("poezia1");
+  hide("poezia2");
+  hide("poezia4");
+  hide("poezia5");
+  hide("poezia6");
+  hide("poezia7");
+  hide("poezia8");
+  show("poezia3");
 }
 function showpoezia4() {
-  document.getElementById("poezia1").style.display = "none";
-  document.getElementById("poezia2").style.display = "none";
-  document.getElementById("poezia3").style.display = "none";
-  document.getElementById("poezia5").style.display = "none";
-  document.getElementById("poezia6").style.display = "none";
-  document.getElementById("poezia7").style.display = "none";
-  document.getElementById("poezia8").style.display = "none";
-  document.getElementById("poezia4").style.display = "block";
+  hide("poezia1");
+  hide("poezia2");
+  hide("poezia3");
+  hide("poezia5");
+  hide("poezia6");
+  hide("poezia7");
+  hide("poezia8");
+  show("poezia4");
 }
 
 function showpoezia5() {
-  document.getElementById("poezia1").style.display = "none";
-  document.getElementById("poezia2").style.display = "none";
-  document.getElementById("poezia3").style.display = "none";
-  document.getElementById("poezia4").style.display = "none";
-  document.getElementById("poezia6").style.display = "none";
-  document.getElementById("poezia7").style.display = "none";
-  document.getElementById("poezia8").style.display = "none";
-  document.getElementById("poezia5").style.display = "block";
+  hide("poezia1");
+  hide("poezia2");
+  hide("poezia3");
+  hide("poezia4");
+  hide("poezia6");
+  hide("poezia7");
+  hide("poezia8");
+  show("poezia5");
 }
 
 function showpoezia6() {
-  document.getElementById("poezia1").style.display = "none";
-  document.getElementById("poezia2").style.display = "none";
-  document.getElementById("poezia3").style.display = "none";
-  document.getElementById("poezia4").style.display = "none";
-  document.getElementById("poezia5").style.display = "none";
-  document.getElementById("poezia7").style.display = "none";
-  document.getElementById("poezia8").style.display = "none";
-  document.getElementById("poezia6").style.display = "block";
+  hide("poezia1");
+  hide("poezia2");
+  hide("poezia3");
+  hide("poezia4");
+  hide("poezia5");
+  hide("poezia7");
+  hide("poezia8");
+  show("poezia6");
 }
 
 function showpoezia7() {
-  document.getElementById("poezia1").style.display = "none";
-  document.getElementById("poezia2").style.display = "none";
-  document.getElementById("poezia3").style.display = "none";
-  document.getElementById("poezia4").style.display = "none";
-  document.getElementById("poezia5").style.display = "none";
-  document.getElementById("poezia6").style.display = "none";
-  document.getElementById("poezia8").style.display = "none";
-  document.getElementById("poezia7").style.display = "block";
+  hide("poezia1");
+  hide("poezia2");
+  hide("poezia3");
+  hide("poezia4");
+  hide("poezia5");
+  hide("poezia6");
+  hide("poezia8");
+  show("poezia7");
 }
 
 function showpoezia8() {
-  document.getElementById("poezia1").style.display = "none";
-  document.getElementById("poezia2").style.display = "none";
-  document.getElementById("poezia3").style.display = "none";
-  document.getElementById("poezia4").style.display = "none";
-  document.getElementById("poezia5").style.display = "none";
-  document.getElementById("poezia6").style.display = "none";
-  document.getElementById("poezia7").style.display = "none";
-  document.getElementById("poezia8").style.display = "block";
+  hide("poezia1");
+  hide("poezia2");
+  hide("poezia3");
+  hide("poezia4");
+  hide("poezia5");
+  hide("poezia6");
+  hide("poezia7");
+  show("poezia8");
 }
 
 showpoezia1();
