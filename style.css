@@ -137,18 +137,24 @@ span {
 }
 /* design Footer */
 footer > div {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
 }
 footer {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
   background-color: grey;
   text-decoration: none;
 }
 footer a {
   color: white;
   text-decoration: none;
+  text-align: center;
 }
+footer span {
+  color: white;
+}
+
 @media only screen and(max-width:450px) {
   .poezii {
     padding: 0;

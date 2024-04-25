@@ -49,7 +49,7 @@ function loadPoetries(poetryNumber) {
     });
 }
 function initEvents() {
-  const numberOfLessons = 7;
+  const numberOfLessons = 8;
   for (let i = 1; i <= numberOfLessons; i++) {
     loadPoetries(i);
   }
