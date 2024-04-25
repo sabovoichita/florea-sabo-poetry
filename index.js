@@ -1,97 +1,58 @@
+var activePage = "poezia1";
+
+function $(selector) {
+  return document.querySelector(selector);
+}
+
 function hide(id) {
+  // console.info("hide", id);
   document.getElementById(id).style.display = "none";
 }
 
 function show(id) {
-  console.info("show", id);
+  // console.info("show", id);
   var page = document.getElementById(id);
-  console.info("show page", page);
+  // console.debug("show page", page);
   page.style.display = "block";
 }
-function showpoezia1() {
-  hide("poezia2");
-  hide("poezia3");
-  hide("poezia4");
-  hide("poezia5");
-  hide("poezia6");
-  hide("poezia7");
-  hide("poezia8");
-  show("poezia1");
+
+function showpoezia(id) {
+  hide(activePage);
+  show(id);
+  activePage = id;
 }
 
-function showpoezia2() {
-  hide("poezia1");
-  hide("poezia3");
-  hide("poezia4");
-  hide("poezia5");
-  hide("poezia6");
-  hide("poezia7");
-  hide("poezia8");
-  show("poezia2");
-}
-function showpoezia3() {
-  hide("poezia1");
-  hide("poezia2");
-  hide("poezia4");
-  hide("poezia5");
-  hide("poezia6");
-  hide("poezia7");
-  hide("poezia8");
-  show("poezia3");
-}
-function showpoezia4() {
-  hide("poezia1");
-  hide("poezia2");
-  hide("poezia3");
-  hide("poezia5");
-  hide("poezia6");
-  hide("poezia7");
-  hide("poezia8");
-  show("poezia4");
+function showPoetry(poetryNumber, poetry) {
+  console.log("poetry", poetry);
+  const insert = $("#poezia1");
+  const { title, content } = poetry;
+  const textHTML = `<div class="designPoetry">
+    <h2> <span class="nb">${poetryNumber}</span>${title}</h2>
+    ${content.map((contentItem) => `<p>${contentItem}</p>`).join(" ")}
+    <span>&copy; Floarea Sabo</span>
+    </div>
+  `;
+  // console.warn("text:", textHTML);
+  insert.innerHTML = textHTML;
 }
 
-function showpoezia5() {
-  hide("poezia1");
-  hide("poezia2");
-  hide("poezia3");
-  hide("poezia4");
-  hide("poezia6");
-  hide("poezia7");
-  hide("poezia8");
-  show("poezia5");
+function loadPoetries(poetryNumber) {
+  console.log("inside");
+  fetch(`poetries/${poetryNumber}.json`)
+    .then((r) => r.json())
+    .then((poetry) => {
+      // console.log("print in console %o", poetry, poetryNumber);
+      showPoetry(poetryNumber, poetry);
+    })
+    .catch((error) => {
+      console.error(`Error loading lesson ${poetryNumber}:`, error);
+    });
 }
-
-function showpoezia6() {
-  hide("poezia1");
-  hide("poezia2");
-  hide("poezia3");
-  hide("poezia4");
-  hide("poezia5");
-  hide("poezia7");
-  hide("poezia8");
-  show("poezia6");
+function initEvents() {
+  const numberOfLessons = 1;
+  for (let i = 1; i <= numberOfLessons; i++) {
+    loadPoetries(i);
+  }
 }
-
-function showpoezia7() {
-  hide("poezia1");
-  hide("poezia2");
-  hide("poezia3");
-  hide("poezia4");
-  hide("poezia5");
-  hide("poezia6");
-  hide("poezia8");
-  show("poezia7");
-}
-
-function showpoezia8() {
-  hide("poezia1");
-  hide("poezia2");
-  hide("poezia3");
-  hide("poezia4");
-  hide("poezia5");
-  hide("poezia6");
-  hide("poezia7");
-  show("poezia8");
-}
-
-showpoezia1();
+initEvents();
+// showpoezia(activePage);

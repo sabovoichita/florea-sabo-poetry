@@ -107,7 +107,7 @@ pre {
 }
 span {
   font-weight: bold;
-  color: #e2dfdf;
+  color: #5c5555;
   font-size: x-large;
 }
 
@@ -119,6 +119,22 @@ span {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 1), 0 2px 3px rgba(0, 0, 0, 1);
 }
 
+.page {
+  display: block;
+  background-color: #56c6eb;
+}
+
+.designPoetry {
+  display: inline-block;
+  background: #ffcf33;
+  font-size: 1.2rem;
+}
+.nb {
+  display: none;
+}
+.designPoetry p {
+  padding-left: 40px;
+}
 /* design Footer */
 footer > div {
   display: flex;
