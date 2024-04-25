@@ -24,7 +24,7 @@ function showpoezia(id) {
 
 function showPoetry(poetryNumber, poetry) {
   console.log("poetry", poetry);
-  const insert = $("#poezia1");
+  const insert = $(`#poezia${poetryNumber}`);
   const { title, content } = poetry;
   const textHTML = `<div class="designPoetry">
     <h2> <span class="nb">${poetryNumber}</span>${title}</h2>
@@ -37,7 +37,7 @@ function showPoetry(poetryNumber, poetry) {
 }
 
 function loadPoetries(poetryNumber) {
-  console.log("inside");
+  // console.log("inside");
   fetch(`poetries/${poetryNumber}.json`)
     .then((r) => r.json())
     .then((poetry) => {
@@ -49,7 +49,7 @@ function loadPoetries(poetryNumber) {
     });
 }
 function initEvents() {
-  const numberOfLessons = 1;
+  const numberOfLessons = 2;
   for (let i = 1; i <= numberOfLessons; i++) {
     loadPoetries(i);
   }
