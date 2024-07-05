@@ -1,15 +1,21 @@
-html {
-  height: 100%;
-  background: #f3f3f3;
-  font-family: "Sofia";
-}
+/* Basic styles */
+html,
 body {
-  min-height: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
+  font-family: "Sofia", sans-serif;
+  background: #f3f3f3;
+  color: #333;
 }
 
-/* Design header */
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Header design */
 #header-info {
   background: radial-gradient(
     closest-corner circle at 25% 10%,
@@ -28,89 +34,116 @@ body {
 }
 
 #header-info h1 {
-  margin: 20px;
+  margin: 0px;
+  padding: 10px;
 }
 
-h1 {
-  font-size: 80px;
+#header-info h2 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #666;
 }
 
-ul {
+#menu-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  background-color: #938181;
-  color: white;
-  border-radius: 9px;
-}
-
-li {
-  float: left;
-}
-
-li a,
-.dropbtn {
-  display: inline-block;
-  color: yellow;
-  font-weight: bold;
-  font-size: x-large;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+  background-color: #bbeeff;
   border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 5px;
 }
 
-li a:hover,
-.dropdown:hover .dropbtn {
-  background-color: white;
-  color: rgb(168, 168, 28);
+#menu-bar a {
+  color: #222;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s;
 }
 
-li.dropdown {
-  display: inline-block;
+#menu-bar a:hover {
+  background-color: #ffcf33;
+  color: white;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #f1e8e8;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  border-radius: 10px;
 }
 
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
-  display: block;
-  text-align: left;
+  border-radius: 10px;
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-li a.active {
-  background-color: #f1f1f1;
+  background-color: #ffcf33;
+  color: white;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
-/* Design content */
-pre {
-  font-size: x-large;
-  font-family: "Sofia";
-}
-span {
-  font-weight: bold;
-  color: #5c5555;
-  font-size: x-large;
+/* Carousel container */
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(-135deg, #ffcf33, #ffff66, #bbeeff);
 }
 
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+#poem-container {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* Poem styles */
 .poezii {
   padding: 20px;
   margin: 20px;
@@ -119,45 +152,86 @@ span {
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 1), 0 2px 3px rgba(0, 0, 0, 1);
 }
 
-.page {
-  display: block;
-  background-color: #56c6eb;
-}
-
 .designPoetry {
   display: block;
   background: #ffcf33;
-  font-size: 1.2rem;
+  font-size: 18px;
+  border-radius: 10px;
+  padding: 20px;
 }
-.nb {
-  display: none;
-}
+
 .designPoetry p {
   padding-left: 40px;
 }
-/* design Footer */
-footer > div {
+
+.poem-info {
+  margin-top: 20px;
 }
+
+/* Footer design */
 footer {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: center;
-  background-color: grey;
-  text-decoration: none;
+  background-color: #f8f8f8;
+  padding: 10px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
+
+footer div {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
 footer a {
-  color: white;
+  color: #5c5555;
   text-decoration: none;
   text-align: center;
 }
-footer span {
-  color: white;
+
+/* Media queries for max-width 700px */
+@media only screen and (max-width: 700px) {
+  #header-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #header-info h1,
+  #header-info h2 {
+    text-align: center;
+  }
+
+  #menu-bar {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  button {
+    margin: 10px 0;
+  }
+
+  #poem-container {
+    padding: 10px;
+  }
 }
 
-@media only screen and(max-width:450px) {
-  .poezii {
+/* Additional media queries for max-width 450px */
+@media only screen and (max-width: 450px) {
+  .poem {
     padding: 0;
     margin: 0;
+  }
+
+  .designPoetry {
+    font-size: 16px;
   }
 }
