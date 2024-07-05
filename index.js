@@ -67,7 +67,7 @@ function updateCarousel() {
         index === activePoem ? "block" : "none"
       };">
           <div class="designPoetry">
-            <h3><span class="nb">${index + 1}</span>${title}</h3>
+            <h3><span class="nb"></span>${title}</h3>
             ${content.map((contentItem) => `<p>${contentItem}</p>`).join(" ")}
           </div>
           

@@ -33,13 +33,13 @@ body {
   align-items: flex-end;
 }
 
-#header-info h1 {
-  margin: 0px;
+#header-info h1,
+#header-info h2 {
+  margin: 0;
   padding: 10px;
 }
 
 #header-info h2 {
-  margin: 0;
   font-size: 1.2em;
   color: #666;
 }
@@ -55,7 +55,6 @@ body {
   background-color: #bbeeff;
   border-radius: 10px;
   display: flex;
-  justify-content: flex-start;
   gap: 10px;
   padding: 5px;
 }
@@ -139,19 +138,58 @@ button {
   transition: background-color 0.3s;
 }
 
-button:hover {
+button:hover,
+button:focus {
   background-color: #555;
+  outline: none;
+}
+
+button:active {
+  background-color: #777;
+  transform: scale(0.98);
+}
+
+/* Larger touch targets and additional space on mobile */
+@media only screen and (max-width: 700px) {
+  #header-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #menu-bar {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  button {
+    margin: 10px 0;
+    padding: 15px 30px; /* Larger touch targets */
+  }
+
+  #poem-container {
+    padding: 10px;
+  }
+}
+
+/* Additional media queries for max-width 450px */
+@media only screen and (max-width: 450px) {
+  .designPoetry {
+    font-size: 16px;
+  }
+
+  button {
+    padding: 20px 40px; /* Even larger touch targets for smaller screens */
+  }
 }
 
 /* Poem styles */
-.poezii {
-  padding: 20px;
-  margin: 20px;
-  background-color: #56c6eb;
-  border-radius: 10px;
-  box-shadow: 0 0 0 1px rgba(0, 0, 0, 1), 0 2px 3px rgba(0, 0, 0, 1);
-}
-
 .designPoetry {
   display: block;
   background: #ffcf33;
@@ -188,50 +226,4 @@ footer div {
 footer a {
   color: #5c5555;
   text-decoration: none;
-  text-align: center;
-}
-
-/* Media queries for max-width 700px */
-@media only screen and (max-width: 700px) {
-  #header-info {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  #header-info h1,
-  #header-info h2 {
-    text-align: center;
-  }
-
-  #menu-bar {
-    position: static;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .carousel {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  button {
-    margin: 10px 0;
-  }
-
-  #poem-container {
-    padding: 10px;
-  }
-}
-
-/* Additional media queries for max-width 450px */
-@media only screen and (max-width: 450px) {
-  .poem {
-    padding: 0;
-    margin: 0;
-  }
-
-  .designPoetry {
-    font-size: 16px;
-  }
 }
