@@ -7,6 +7,8 @@ body {
   font-family: "Sofia", sans-serif;
   background: #f3f3f3;
   color: #333;
+  max-width: 700px;
+  /* align-items: center; */
 }
 
 body {
@@ -47,7 +49,7 @@ body {
 #menu-bar {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 300px;
   z-index: 2;
   list-style-type: none;
   margin: 0;
@@ -60,6 +62,7 @@ body {
 }
 
 #menu-bar a {
+  display: block;
   color: #222;
   text-decoration: none;
   padding: 10px;
@@ -68,6 +71,7 @@ body {
 }
 
 #menu-bar a:hover {
+  display: block;
   background-color: #ffcf33;
   color: white;
 }
@@ -104,7 +108,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   background: linear-gradient(-135deg, #ffcf33, #ffff66, #bbeeff);
 }
 
@@ -118,21 +122,24 @@ body {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 10px;
 }
 
 #poem-container {
   flex: 1;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
 
 button {
   background-color: #333;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8 0L4.247 6H0l3.753-6H8z' fill='%23284086'/%3E%3C/svg%3E");
+  background-size: 8px 6px;
   color: white;
   border: none;
   border-radius: 10px;
   padding: 10px 20px;
+  margin: 10px;
   cursor: pointer;
   font-size: 1em;
   transition: background-color 0.3s;
@@ -170,7 +177,7 @@ button:active {
 
   button {
     margin: 10px 0;
-    padding: 15px 30px; /* Larger touch targets */
+    padding: 5px 15px; /* Larger touch targets */
   }
 
   #poem-container {
@@ -185,7 +192,7 @@ button:active {
   }
 
   button {
-    padding: 20px 40px; /* Even larger touch targets for smaller screens */
+    padding: 10px 20px; /* Even larger touch targets for smaller screens */
   }
 }
 
@@ -195,7 +202,7 @@ button:active {
   background: #ffcf33;
   font-size: 18px;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .designPoetry p {
@@ -203,7 +210,7 @@ button:active {
 }
 
 .poem-info {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* Footer design */

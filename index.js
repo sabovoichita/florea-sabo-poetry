@@ -30,11 +30,13 @@ function initializePage() {
   const containerHTML = `
     <div class="container">
       <div class="carousel">
-        <button id="prevBtn">Previous</button>
+        <button id="prevBtn">▶</button>
+        <button id="nextBtn">◀</button>
         <div id="poem-container" class="carousel-inner">
           <!-- Poems will be displayed here -->
         </div>
-        <button id="nextBtn">Next</button>
+         <button id="prevBtn1">▶</button>
+        <button id="nextBtn1">◀</button>
       </div>
     </div>
   `;
@@ -120,8 +122,16 @@ function initEvents() {
     activePoem = (activePoem - 1 + poems.length) % poems.length;
     updateCarousel();
   });
+  $("#prevBtn1").addEventListener("click", () => {
+    activePoem = (activePoem - 1 + poems.length) % poems.length;
+    updateCarousel();
+  });
 
   $("#nextBtn").addEventListener("click", () => {
+    activePoem = (activePoem + 1) % poems.length;
+    updateCarousel();
+  });
+  $("#nextBtn1").addEventListener("click", () => {
     activePoem = (activePoem + 1) % poems.length;
     updateCarousel();
   });
