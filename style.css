@@ -96,6 +96,7 @@ body {
 
 /* Carousel container */
 .container {
+  font-family: "Roboto", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,57 +148,18 @@ button:active {
   transform: scale(0.98);
 }
 
-/* Larger touch targets and additional space on mobile */
-@media only screen and (max-width: 700px) {
-  #header-info {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  #menu-bar {
-    position: static;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .carousel {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  button {
-    margin: 10px 0;
-    padding: 5px 15px; /* Larger touch targets */
-  }
-
-  #poem-container {
-    padding: 10px;
-  }
-}
-
-/* Additional media queries for max-width 450px */
-@media only screen and (max-width: 450px) {
-  .designPoetry {
-    font-size: 16px;
-  }
-
-  button {
-    padding: 10px 20px; /* Even larger touch targets for smaller screens */
-  }
-}
-
 /* Poem styles */
 .designPoetry {
   display: block;
   background: #ffcf33;
-  font-size: 18px;
+  font-size: 14px;
   border-radius: 10px;
   padding: 10px;
 }
 
 .designPoetry p {
-  padding-left: 40px;
+  padding-left: 5px;
+  text-align: left;
 }
 
 .poem-info {
@@ -224,4 +186,43 @@ footer div {
 footer a {
   color: #5c5555;
   text-decoration: none;
+}
+/* Larger touch targets and additional space on mobile */
+@media only screen and (max-width: 700px) {
+  #header-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #menu-bar {
+    position: static;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  button {
+    margin: 10px 0;
+    padding: 5px 15px; /* Larger touch targets */
+  }
+
+  #poem-container {
+    padding: 5px;
+  }
+}
+
+/* Additional media queries for max-width 450px */
+@media only screen and (max-width: 450px) {
+  .designPoetry {
+    font-size: 12px;
+  }
+
+  button {
+    padding: 10px 20px; /* Even larger touch targets for smaller screens */
+  }
 }
