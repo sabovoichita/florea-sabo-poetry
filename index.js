@@ -113,7 +113,7 @@ function showPoem(index) {
 }
 
 function initEvents() {
-  const numberOfPoems = 11;
+  const numberOfPoems = 12;
   for (let i = 1; i <= numberOfPoems; i++) {
     loadPoetries(i);
   }
