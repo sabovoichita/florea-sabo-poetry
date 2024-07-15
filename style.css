@@ -102,7 +102,7 @@ body {
 
 /* Carousel container */
 .container {
-  font-family: "Roboto", sans-serif;
+  font-family: "Lora", open-sans;
   display: flex;
   justify-content: center;
   align-items: center;
