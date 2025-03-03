@@ -13,7 +13,7 @@ body {
   background: #f0f0f0;
   font-family: "Lora", serif;
   perspective: 3000px;
-  padding: 50px;
+  padding: 20px;
 }
 
 .book {
@@ -134,7 +134,7 @@ body {
 }
 
 .page-content {
-  padding: 30px;
+  padding: 10px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -183,7 +183,7 @@ body {
 .page-content h2 {
   font-size: clamp(16px, 2vw, 20px);
   color: #333;
-  margin: 0 0 10px;
+  margin: 0 0 5px;
   text-align: left;
   font-weight: 700;
   position: relative;
@@ -200,7 +200,7 @@ body {
   margin: 0;
   position: relative;
   z-index: 1;
-  padding: 0 10px;
+  /* padding: 0 10px; */
   column-fill: auto;
 }
 
@@ -261,11 +261,11 @@ body {
 
 @media (max-width: 1200px) {
   .content-scroll {
-    column-gap: 30px;
+    column-gap: 10px;
   }
 
   .page-content {
-    padding: 25px;
+    padding: 15px;
   }
 }
 
