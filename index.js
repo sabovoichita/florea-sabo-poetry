@@ -1,5 +1,6 @@
 let currentPage = 0;
 const poems = [];
+let isFlipping = false;
 
 function initializeBook() {
   document.body.innerHTML = `
@@ -21,9 +22,9 @@ function updateBook() {
   container.innerHTML = poems
     .map(
       (poetry, index) => `
-      <div class="page ${
-        index === currentPage ? "active" : ""
-      }" id="page-${index}">
+      <div class="page ${index < currentPage ? "flipped" : ""}" 
+           id="page-${index}" 
+           style="z-index: ${poems.length - index}">
         <div class="page-front">
           <div class="page-content">
             <h2>${poetry.title}</h2>
@@ -39,42 +40,37 @@ function updateBook() {
     `
     )
     .join("");
-
-  updatePagePositions();
-}
-
-function updatePagePositions() {
-  const pages = document.querySelectorAll(".page");
-  pages.forEach((page, index) => {
-    if (index < currentPage) {
-      // Pages before current go to the left
-      page.style.transform = "rotateY(-180deg)";
-      page.style.zIndex = poems.length - index;
-    } else if (index === currentPage) {
-      // Current page
-      page.style.transform = "rotateY(0deg)";
-      page.style.zIndex = poems.length;
-    } else {
-      // Pages after current go to the right
-      page.style.transform = "rotateY(0deg)";
-      page.style.zIndex = poems.length - index;
-    }
-  });
 }
 
 function flipPage(forward) {
+  if (isFlipping) return;
+
   const pages = document.querySelectorAll(".page");
 
   if (forward && currentPage < pages.length - 1) {
+    isFlipping = true;
     const currentPageElement = pages[currentPage];
-    currentPageElement.style.transform = "rotateY(-180deg)";
-    currentPage++;
-    updatePagePositions();
+
+    currentPageElement.style.zIndex = poems.length - currentPage;
+    currentPageElement.classList.add("flipped");
+
+    setTimeout(() => {
+      currentPage++;
+      isFlipping = false;
+      updateButtonState();
+    }, 600);
   } else if (!forward && currentPage > 0) {
-    currentPage--;
-    const currentPageElement = pages[currentPage];
-    currentPageElement.style.transform = "rotateY(0deg)";
-    updatePagePositions();
+    isFlipping = true;
+    const previousPageElement = pages[currentPage - 1];
+
+    previousPageElement.style.zIndex = poems.length - (currentPage - 1);
+    previousPageElement.classList.remove("flipped");
+
+    setTimeout(() => {
+      currentPage--;
+      isFlipping = false;
+      updateButtonState();
+    }, 600);
   }
 
   updateButtonState();
@@ -83,8 +79,8 @@ function flipPage(forward) {
 function updateButtonState() {
   const prevButton = document.getElementById("prevPage");
   const nextButton = document.getElementById("nextPage");
-  prevButton.disabled = currentPage === 0;
-  nextButton.disabled = currentPage === poems.length - 1;
+  prevButton.disabled = currentPage === 0 || isFlipping;
+  nextButton.disabled = currentPage === poems.length - 1 || isFlipping;
 }
 
 function loadPoetry(index) {
